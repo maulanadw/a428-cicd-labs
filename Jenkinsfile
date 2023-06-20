@@ -10,7 +10,7 @@ node {
 
         stage('Deploy') {
             sh './jenkins/scripts/deliver.sh'
-            input message "Sudah selesai menggunakan React App? (Klik "Proceed" untuk mengakhiri)", ok: 'Proceed'
+            input message 'Sudah selesai menggunakan React App? (Klik "Proceed" untuk mengakhiri)', ok: 'Proceed'
             sh './jenkins/scripts/kill.sh'
         }
     }
