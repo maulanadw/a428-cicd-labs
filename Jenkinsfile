@@ -8,6 +8,10 @@ node {
             sh './jenkins/scripts/test.sh'
         }
 
+        stage('Manual Approval') {
+            input message: 'Lanjutkan ke tahap Deploy?', ok: 'Proceed', submitter: 'maulanadw'
+        }
+
         stage('Deploy') {
             sh './jenkins/scripts/deliver.sh'
             timeout(time: 1, unit: 'MINUTES') {
