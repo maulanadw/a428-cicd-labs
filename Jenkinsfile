@@ -17,7 +17,7 @@ node {
             timeout(time: 1, unit: 'MINUTES') {
                 input message: 'Sudah selesai menggunakan React App? (Klik "Proceed" untuk mengakhiri)', ok: 'Proceed'
             }
-            sleep 1m // wait for 1 minute
+            sleep 60 // wait for 1 minute
             sh './jenkins/scripts/kill.sh'
         }
     }
